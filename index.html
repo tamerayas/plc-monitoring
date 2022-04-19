@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main center">
+      <div class="content-wrapper">
+        <div class="header">
+          <div style="float: left" align="center">
+            <img
+              src="KIPAS.png"
+              width="300px"
+              height="120px"
+              style="margin-top: 30px; margin-left: 10px"
+            />
+          </div>
+
+          <div style="float: right" align="center">
+            <a href="http://www.merkonotomasyon.com"
+              ><img
+                src="merkon_logo.png"
+                width="230px"
+                height="210px"
+                style="margin-top: 30px; margin-right: 15px"
+            /></a>
+          </div>
+          <div class="header_2">
+            <h1>
+              <br /><br />
+              KİPAŞ MENSUCAT <br /> ENERJİ İZLEME
+            </h1>
+          </div>
+          <div class="cizgi">
+            <hr
+              color="white"
+              width="550"
+              size="10"
+              style="position: absolute; top: 210px; left: 690px"
+            />
+          </div>
+        </div>
+        <!-- clock widget start -->
+        <div>
+          <script type="text/javascript">
+            saatkacTT_iDate = 1;
+            saatkacTT_country = "TR";
+            saatkacTT_region = "";
+            saatkacTT_fontColor = "black";
+            saatkacTT_fontType = "bold 18px verdana";
+          </script>
+          <script
+            type="text/javascript"
+            src="http://www.saatkac.com/dateTimeText.js"
+          ></script>
+        </div>
+        <div class="el-row">
+          <div class="el-col el-col-24">
+            <div class="divider">
+              <h1 class="header-title center">
+                KİPAŞ MENSUCAT ENERJİ İZLEME SİSTEMİ
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="trafo" type="button" class="success">
+            <span>TRAFO MERKEZİ</span></button
+          ><button id="ken" type="button">
+            <span>KEN</span></button
+          ><button id="ges" type="button">
+            <span>GES</span>
+          </button>
+          <button id="kazan" type="button">
+            <span>KAZAN</span>
+          </button>
+        </div>
+        <div class="divider el-row">
+          <div class="el-col el-col-24">
+            <div class="divider">
+              <h1 class="header-title center">TRAFO MERKEZİ</h1>
+            </div>
+          </div>
+        </div>
+
+        <div id="trafotable" class="table">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GERİLİM (V)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_VOLTAJ">:="DB_1_EA".FAZ_1_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_VOLTAJ">:="DB_1_EA".FAZ_2_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_VOLTAJ">:="DB_1_EA".FAZ_3_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_VOLTAJ">
+                    :="DB_1_EA".FAZ_1_2_3_VOLTAJ:
+                  </td>
+                  <td>V</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">AKIM (A)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_AKIM">:="DB_1_EA".FAZ_1_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_AKIM">:="DB_1_EA".FAZ_2_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_AKIM">:="DB_1_EA".FAZ_3_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_AKIM">:="DB_1_EA".FAZ_1_2_3_AKIM:</td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">COS (ø)- FREKANS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_COSF">:="DB_1_EA".FAZ_1_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_COSF">:="DB_1_EA".FAZ_2_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_COSF">:="DB_1_EA".FAZ_3_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_1_2_3_COSF">:="DB_1_EA".FAZ_1_2_3_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FREKANS">:="DB_1_EA".FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GÜÇ FAKTÖRÜ ( PF )</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_GUC_FAKTORU">
+                    :="DB_1_EA".FAZ_1_GUC_FAKTORU:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_GUC_FAKTORU">
+                    :="DB_1_EA".FAZ_2_GUC_FAKTORU:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_GUC_FAKTORU">
+                    :="DB_1_EA".FAZ_3_GUC_FAKTORU:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_GUC_FAKTORU">
+                    :="DB_1_EA".FAZ_1_2_3_GUC_FAKTORU:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">AKTİF GÜÇ ( kW )</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_AKTIF_GUC">
+                    :="DB_1_EA".FAZ_1_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_AKTIF_GUC">
+                    :="DB_1_EA".FAZ_2_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_AKTIF_GUC">
+                    :="DB_1_EA".FAZ_3_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_AKTIF_GUC">
+                    :="DB_1_EA".FAZ_1_2_3_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">REAKTİF GÜÇ ( kvarL )</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_REAKTIF_GUC_L">
+                    :="DB_1_EA".FAZ_1_REAKTIF_GUC_L:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_REAKTIF_GUC_L">
+                    :="DB_1_EA".FAZ_2_REAKTIF_GUC_L:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_REAKTIF_GUC_L">
+                    :="DB_1_EA".FAZ_3_REAKTIF_GUC_L:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_REAKTIF_GUC_L">
+                    :="DB_1_EA".FAZ_1_2_3_REAKTIF_GUC_L:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">REAKTİF GÜÇ ( kvarC )</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_REAKTIF_GUC_C">
+                    :="DB_1_EA".FAZ_1_REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_REAKTIF_GUC_C">
+                    :="DB_1_EA".FAZ_2_REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_REAKTIF_GUC_C">
+                    :="DB_1_EA".FAZ_3_REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_REAKTIF_GUC_C">
+                    :="DB_1_EA".FAZ_1_2_3_REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GÖRÜNÜR GÜÇ ( kVA )</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_1_FAZ_1_GORUNUR_GUC">
+                    :="DB_1_EA".FAZ_1_GORUNUR_GUC:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_1_FAZ_2_GORUNUR_GUC">
+                    :="DB_1_EA".FAZ_2_GORUNUR_GUC:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_1_FAZ_3_GORUNUR_GUC">
+                    :="DB_1_EA".FAZ_3_GORUNUR_GUC:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_1_FAZ_1_2_3_GORUNUR_GUC">
+                    :="DB_1_EA".FAZ_1_2_3_GORUNUR_GUC:
+                  </td>
+                  <td>kvarC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="kentable" class="table d-none">
+          <div class="table-wrapper centered-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">
+                    TRAFO MERKEZİ AKTİF GÜÇ ( kW )
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_2_TRAFO_MERKEZI_AKTIF_GUC">
+                    :="DB_2_KEN_1".TRAFO_MERKEZI_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">KEN-1</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AKTİF GÜÇ</td>
+                  <td id="DB_2_AKTIF_GUC">:="DB_2_KEN_1".AKTIF_GUC:</td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_2_REAKTIF_GUC_C">:="DB_2_KEN_1".REAKTIF_GUC_C:</td>
+                  <td>kvarL</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">KEN-2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AKTİF GÜÇ</td>
+                  <td id="DB_3_AKTIF_GUC">:="DB_3_KEN_2".AKTIF_GUC:</td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_3_REAKTIF_GUC_C">:="DB_3_KEN_2".REAKTIF_GUC_C:</td>
+                  <td>kvarL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">UNITE-3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AKTİF GÜÇ</td>
+                  <td id="DB_4_AKTIF_GUC">:="DB_4_UNITE_3".AKTIF_GUC:</td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_4_REAKTIF_GUC_C">
+                    :="DB_4_UNITE_3".REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">UNITE-4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AKTİF GÜÇ</td>
+                  <td id="DB_5_AKTIF_GUC">:="DB_5_UNITE_4".AKTIF_GUC:</td>
+                  <td>kW</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_5_REAKTIF_GUC_C">
+                    :="DB_5_UNITE_4".REAKTIF_GUC_C:
+                  </td>
+                  <td>kvarL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="gestable" class="table d-none">
+          <div class="table-wrapper centered-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">
+                    TRAFO MERKEZİ AKTİF GÜÇ ( kW )
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_10_TRAFO_MERKEZI_AKTIF_GUC">
+                    :="DB_10_GES_1".TRAFO_MERKEZI_AKTIF_GUC:
+                  </td>
+                  <td>kW</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GES-1</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ANA FREKANS</td>
+                  <td id="DB_10_ANA_FREKANS">:="DB_10_GES_1".ANA_FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+                <tr>
+                  <td>DC AKIM</td>
+                  <td id="DB_10_DC_AKIM">:="DB_10_GES_1".DC_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC GÜÇ</td>
+                  <td id="DB_10_AC_GUC">:="DB_10_GES_1".AC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>DC GÜÇ</td>
+                  <td id="DB_10_DC_GUC">:="DB_10_GES_1".DC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_10_REAKTIF_GUC">:="DB_10_GES_1".REAKTIF_GUC:</td>
+                  <td>Var</td>
+                </tr>
+                <tr>
+                  <td>INVERTER SICAKLIĞI</td>
+                  <td id="DB_10_INVERTER_SICAKLIGI">
+                    :="DB_10_GES_1".INVERTER_SICAKLIGI:
+                  </td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>DC GERİLİM</td>
+                  <td id="DB_10_DC_GERILIM">:="DB_10_GES_1".DC_GERILIM:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>GÜNDE ÜRETİLEN ENERJİ</td>
+                  <td id="DB_10_GUNDE_URETILEN_ENERJI">
+                    :="DB_10_GES_1".GUNDE_URETILEN_ENERJI:
+                  </td>
+                  <td>kWh</td>
+                </tr>
+                <tr>
+                  <td>HATA</td>
+                  <td id="DB_10_HATA">:="DB_10_GES_1".HATA:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 1</td>
+                  <td id="DB_10_AC_AKIM_FAZ_1">
+                    :="DB_10_GES_1".AC_AKIM_FAZ_1:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 2</td>
+                  <td id="DB_10_AC_AKIM_FAZ_2">
+                    :="DB_10_GES_1".AC_AKIM_FAZ_2:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 3</td>
+                  <td id="DB_10_AC_AKIM_FAZ_3">
+                    :="DB_10_GES_1".AC_AKIM_FAZ_3:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GES-2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ANA FREKANS</td>
+                  <td id="DB_11_ANA_FREKANS">:="DB_11_GES_2".ANA_FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+                <tr>
+                  <td>DC AKIM</td>
+                  <td id="DB_11_DC_AKIM">:="DB_11_GES_2".DC_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC GÜÇ</td>
+                  <td id="DB_11_AC_GUC">:="DB_11_GES_2".AC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>DC GÜÇ</td>
+                  <td id="DB_11_DC_GUC">:="DB_11_GES_2".DC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_11_REAKTIF_GUC">:="DB_11_GES_2".REAKTIF_GUC:</td>
+                  <td>Var</td>
+                </tr>
+                <tr>
+                  <td>INVERTER SICAKLIĞI</td>
+                  <td id="DB_11_INVERTER_SICAKLIGI">
+                    :="DB_11_GES_2".INVERTER_SICAKLIGI:
+                  </td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>DC GERİLİM</td>
+                  <td id="DB_11_DC_GERILIM">:="DB_11_GES_2".DC_GERILIM:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>GÜNDE ÜRETİLEN ENERJİ</td>
+                  <td id="DB_11_GUNDE_URETILEN_ENERJI">
+                    :="DB_11_GES_2".GUNDE_URETILEN_ENERJI:
+                  </td>
+                  <td>kWh</td>
+                </tr>
+                <tr>
+                  <td>HATA</td>
+                  <td id="DB_11_HATA">:="DB_11_GES_2".HATA:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 1</td>
+                  <td id="DB_11_AC_AKIM_FAZ_1">
+                    :="DB_11_GES_2".AC_AKIM_FAZ_1:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 2</td>
+                  <td id="DB_11_AC_AKIM_FAZ_2">
+                    :="DB_11_GES_2".AC_AKIM_FAZ_2:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 3</td>
+                  <td id="DB_11_AC_AKIM_FAZ_3">
+                    :="DB_11_GES_2".AC_AKIM_FAZ_3:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GES-3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ANA FREKANS</td>
+                  <td id="DB_12_ANA_FREKANS">:="DB_12_GES_3".ANA_FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+                <tr>
+                  <td>DC AKIM</td>
+                  <td id="DB_12_DC_AKIM">:="DB_12_GES_3".DC_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC GÜÇ</td>
+                  <td id="DB_12_AC_GUC">:="DB_12_GES_3".AC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>DC GÜÇ</td>
+                  <td id="DB_12_DC_GUC">:="DB_12_GES_3".DC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_12_REAKTIF_GUC">:="DB_12_GES_3".REAKTIF_GUC:</td>
+                  <td>Var</td>
+                </tr>
+                <tr>
+                  <td>INVERTER SICAKLIĞI</td>
+                  <td id="DB_12_INVERTER_SICAKLIGI">
+                    :="DB_12_GES_3".INVERTER_SICAKLIGI:
+                  </td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>DC GERİLİM</td>
+                  <td id="DB_12_DC_GERILIM">:="DB_12_GES_3".DC_GERILIM:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>GÜNDE ÜRETİLEN ENERJİ</td>
+                  <td id="DB_11_GUNDE_URETILEN_ENERJI">
+                    :="DB_11_GES_2".GUNDE_URETILEN_ENERJI:
+                  </td>
+                  <td>kWh</td>
+                </tr>
+                <tr>
+                  <td>HATA</td>
+                  <td id="DB_12_HATA">:="DB_12_GES_3".HATA:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 1</td>
+                  <td id="DB_12_AC_AKIM_FAZ_1">
+                    :="DB_12_GES_3".AC_AKIM_FAZ_1:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 2</td>
+                  <td id="DB_12_AC_AKIM_FAZ_2">
+                    :="DB_12_GES_3".AC_AKIM_FAZ_2:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 3</td>
+                  <td id="DB_12_AC_AKIM_FAZ_3">
+                    :="DB_12_GES_3".AC_AKIM_FAZ_3:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GES-4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ANA FREKANS</td>
+                  <td id="DB_13_ANA_FREKANS">:="DB_13_GES_4".ANA_FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+                <tr>
+                  <td>DC AKIM</td>
+                  <td id="DB_13_DC_AKIM">:="DB_13_GES_4".DC_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC GÜÇ</td>
+                  <td id="DB_13_AC_GUC">:="DB_13_GES_4".AC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>DC GÜÇ</td>
+                  <td id="DB_13_DC_GUC">:="DB_13_GES_4".DC_GUC:</td>
+                  <td>W</td>
+                </tr>
+                <tr>
+                  <td>REAKTİF GÜÇ</td>
+                  <td id="DB_13_REAKTIF_GUC">:="DB_13_GES_4".REAKTIF_GUC:</td>
+                  <td>Var</td>
+                </tr>
+                <tr>
+                  <td>INVERTER SICAKLIĞI</td>
+                  <td id="DB_13_INVERTER_SICAKLIGI">
+                    :="DB_13_GES_4".INVERTER_SICAKLIGI:
+                  </td>
+                  <td>C</td>
+                </tr>
+                <tr>
+                  <td>DC GERİLİM</td>
+                  <td id="DB_13_DC_GERILIM">:="DB_13_GES_4".DC_GERILIM:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>GÜNDE ÜRETİLEN ENERJİ</td>
+                  <td id="DB_13_GUNDE_URETILEN_ENERJI">
+                    :="DB_13_GES_4".GUNDE_URETILEN_ENERJI:
+                  </td>
+                  <td>kWh</td>
+                </tr>
+                <tr>
+                  <td>HATA</td>
+                  <td id="DB_13_HATA">:="DB_13_GES_4".HATA:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 1</td>
+                  <td id="DB_13_AC_AKIM_FAZ_1">
+                    :="DB_13_GES_4".AC_AKIM_FAZ_1:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 2</td>
+                  <td id="DB_13_AC_AKIM_FAZ_2">
+                    :="DB_13_GES_4".AC_AKIM_FAZ_2:
+                  </td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>AC AKIM FAZ 3</td>
+                  <td id="DB_13_AC_AKIM_FAZ_3">
+                    :="DB_13_GES_4".AC_AKIM_FAZ_3:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="kazantable" class="table d-none">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">GERİLİM (V)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_14_FAZ_1_VOLTAJ">:="DB_14_KAZAN".FAZ_1_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_14_FAZ_2_VOLTAJ">:="DB_14_KAZAN".FAZ_2_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_14_FAZ_3_VOLTAJ">:="DB_14_KAZAN".FAZ_3_VOLTAJ:</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_14_FAZ_1_2_3_VOLTAJ">
+                    :="DB_14_KAZAN".FAZ_1_2_3_VOLTAJ:
+                  </td>
+                  <td>V</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">AKIM (A)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_14_FAZ_1_AKIM">:="DB_14_KAZAN".FAZ_1_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_14_FAZ_2_AKIM">:="DB_14_KAZAN".FAZ_2_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_14_FAZ_3_AKIM">:="DB_14_KAZAN".FAZ_3_AKIM:</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_14_FAZ_1_2_3_AKIM">
+                    :="DB_14_KAZAN".FAZ_1_2_3_AKIM:
+                  </td>
+                  <td>A</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">COS (ø)- FREKANS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>L1,2</td>
+                  <td id="DB_14_FAZ_1_COSF">:="DB_14_KAZAN".FAZ_1_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L2,3</td>
+                  <td id="DB_14_FAZ_2_COSF">:="DB_14_KAZAN".FAZ_2_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L3,1</td>
+                  <td id="DB_14_FAZ_3_COSF">:="DB_14_KAZAN".FAZ_3_COSF:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_14_FAZ_1_2_3_COSF">
+                    :="DB_14_KAZAN".FAZ_1_2_3_COSF:
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>L1,2,3</td>
+                  <td id="DB_14_FREKANS">:="DB_14_KAZAN".FREKANS:</td>
+                  <td>Hz</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3">KAZAN BİLGİLERİ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BASINÇ</td>
+                  <td id="DB_14_BASINC">:="DB_14_KAZAN".BASINC:</td>
+                  <td>BAR</td>
+                </tr>
+                <tr>
+                  <td>DEBİ</td>
+                  <td id="DB_14_DEBI">:="DB_14_KAZAN".DEBI:</td>
+                  <td>T/H</td>
+                </tr>
+                <tr>
+                  <td>SICAKLIK</td>
+                  <td id="DB_14_SICAKLIK">:="DB_14_KAZAN".SICAKLIK:</td>
+                  <td>ºc</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
